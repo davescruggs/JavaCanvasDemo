@@ -21,17 +21,19 @@ Once the application is downloaded you can open it with your favorite editor. Th
 3. size.jsp
 
 In all three of these you will notice a scriplet at the top of the page 
-`<%
-	//get signedrequest from Salesforce
-	Map<String, String[]> parameters = request.getParameterMap();
-	String[] sRequest = parameters.get("signed_request");
-	if(sRequest == null){%>You must run this app in a Canvas<%	
+
+    <%
+	    //get signedrequest from Salesforce
+		Map<String, String[]> parameters = request.getParameterMap();
+		String[] sRequest = parameters.get("signed_request");
+		if(sRequest == null){%>You must run this app in a Canvas<%	
 		return;
-	}	
-	//only hard coded for demo purposes
-	String consumerSecret = "8773966858026744077";
-	String jsonRequest = SignedRequest.verifyAndDecodeAsJson(sRequest[0], consumerSecret);
-%>` 
+		}	
+		//only hard coded for demo purposes
+		String consumerSecret = "8773966858026744077";
+		String jsonRequest = SignedRequest.verifyAndDecodeAsJson(sRequest[0], consumerSecret);
+    %>
+
 
 You'll need to replace consumerSecret with the consumerSecret of the connected app you've created in your pre-release instance for each of these pages. 
 That's the only change you **have** to make to the application, of course you are free to make any change that you *want* to make.
@@ -39,19 +41,20 @@ That's the only change you **have** to make to the application, of course you ar
 ##Creating Visualforce page##
 The final step (other than creating connected applications explained above) is creating the visual force page. Here is the code from my demo to use as a referece
 
-` <apex:canvasApp applicationName="msgapp1"
+    <div id="msgapp1" style="border:solid blue 2px; margin-bottom: 10px;">
+    <apex:canvasApp applicationName="msgapp1"
      height="250px" width="750px"/>
-  </div>  
+    </div>  
 
-  <div id="msgapp2" style="border:solid blue 2px; margin-bottom: 10px;">
-  <apex:canvasApp applicationName="msgapp2"
+    <div id="msgapp2" style="border:solid blue 2px; margin-bottom: 10px;">
+	<apex:canvasApp applicationName="msgapp2"
      height="250px" width="750px"/>
-  </div>  
-  
- <div id="sizeApp" style="border:solid blue 2px; margin-bottom: 10px;">
-  <apex:canvasApp applicationName="sizingapp"
+	</div>  
+
+	<div id="sizeApp" style="border:solid blue 2px; margin-bottom: 10px;">
+    <apex:canvasApp applicationName="sizingapp"
      height="250px" width="750px" scrolling="true"/>
-  </div>`
+    </div>`
 
 Of course you will need to change the applicationName attribute to whatever you called your connected app.
 
