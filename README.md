@@ -15,7 +15,7 @@ Currently the application is hosted on GitHub. You can clone or fork it from the
 
 `$git clone git@github.com:rupton/JavaCanvasDemo.git`
 
-Once the application is downloaded you can open its contents with your favorite editor. The main files you’ll work with are in the directory /src/main/webapp/canvasdemos
+Once the application is downloaded you can open its contents with your favorite editor. The main files you’ll work with are in the directory /src/main/webapp/canvasdemos.  
 1. app1.jsp  
 2. app2.jsp  
 3. size.jsp  
