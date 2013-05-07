@@ -25,8 +25,7 @@ In all three of these you will notice a scriplet at the top of the page
 	//get signedrequest from Salesforce
 	Map<String, String[]> parameters = request.getParameterMap();
 	String[] sRequest = parameters.get("signed_request");
-	if(sRequest == null){%>You must run this app in a Canvas<%
-	
+	if(sRequest == null){%>You must run this app in a Canvas<%	
 		return;
 	}	
 	//only hard coded for demo purposes
@@ -42,11 +41,13 @@ The final step (other than creating connected applications explained above) is c
 
 ` <apex:canvasApp applicationName="msgapp1"
      height="250px" width="750px"/>
-  </div>
+  </div>  
+
   <div id="msgapp2" style="border:solid blue 2px; margin-bottom: 10px;">
   <apex:canvasApp applicationName="msgapp2"
      height="250px" width="750px"/>
-  </div>
+  </div>  
+  
  <div id="sizeApp" style="border:solid blue 2px; margin-bottom: 10px;">
   <apex:canvasApp applicationName="sizingapp"
      height="250px" width="750px" scrolling="true"/>
